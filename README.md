@@ -16,6 +16,8 @@ Url of api docs [http://localhost:5000/docs/](http://localhost:5000/docs/)
 
 Url of Nestjs in production. [https://nestjs-mongodb-g2nm85c59.now.sh](https://nestjs-mongodb-g2nm85c59.now.sh)
 
-Screenshot for the client app version.
+How to deploy to Netlify? [here](https://trilon.io/blog/deploying-nestjs-to-zeit-now)
 
-![screenshot](./screenshot.png)
+How to include environment variables? [here](https://zeit.co/docs/v2/build-step#using-environment-variables-and-secrets)
+
+Note: Hiding secret keys in your environment variables is a best practice. However, I'm not worried not setting it up here because the mongo server that I'm using is free.
