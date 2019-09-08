@@ -53,10 +53,7 @@ export class VillainsController {
   @Post()
   async saveVillain(@Res() res, @Body() villainDto: CreateVillainDto) {
     const createdVillain = await this.villainService.add(villainDto);
-    return res.status(HttpStatus.OK).json({
-      message: 'Villain has been created successfully',
-      createdVillain,
-    });
+    return res.status(HttpStatus.OK).json(createdVillain);
   }
 
   @Put(':id')

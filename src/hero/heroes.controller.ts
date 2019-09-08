@@ -53,10 +53,7 @@ export class HeroesController {
   @Post()
   async saveHero(@Res() res, @Body() heroDto: CreateHeroDto) {
     const createdHero = await this.heroService.add(heroDto);
-    return res.status(HttpStatus.OK).json({
-      message: 'Hero has been created successfully',
-      createdHero,
-    });
+    return res.status(HttpStatus.OK).json(createdHero);
   }
 
   @ApiOperation({ title: 'Update hero' })
