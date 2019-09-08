@@ -1,13 +1,12 @@
 import { Model } from 'mongoose';
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateHeroDto } from './create-hero.dto';
-import { InjectModel } from '@nestjs/mongoose';
 import { HeroInterface } from './hero.interface';
 
 @Injectable()
 export class HeroService {
   constructor(
-    @InjectModel('hero')
+    @Inject('HERO_MODEL')
     private readonly heroModel: Model<HeroInterface>,
   ) {}
 
@@ -31,7 +30,9 @@ export class HeroService {
   }
 
   async remove(id: string): Promise<any> {
-    // this.heroModel.deleteOne(); does not return anything.
-    return await this.heroModel.findByIdAndRemove(id);
+    const result = await this.heroModel.deleteOne({ _id: id }).exec();
+    if (result.n === 0) {
+      throw new NotFoundException('Could not find hero.');
+    }
   }
 }

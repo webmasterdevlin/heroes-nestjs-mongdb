@@ -9,23 +9,26 @@ import {
   Delete,
   Param,
   HttpException,
-  NotFoundException,
 } from '@nestjs/common';
 import { VillainService } from './villain.service';
 import { CreateVillainDto } from './create-villain.dto';
-import { ApiUseTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 
 @ApiUseTags('villains')
 @Controller('villains')
 export class VillainsController {
   constructor(private readonly villainService: VillainService) {}
 
+  @ApiOperation({ title: 'Get all villains' })
+  @ApiResponse({ status: 200, description: 'Return all villain.' })
   @Get()
   async retrieveVillains(@Res() res) {
     const villains = await this.villainService.getAllFromDb();
     return res.status(HttpStatus.OK).json(villains);
   }
 
+  @ApiOperation({ title: 'Get a villain by id' })
+  @ApiResponse({ status: 200, description: 'Return a villain by id.' })
   @Get(':id')
   async retrieveVillain(@Param('id') id: string) {
     const villain = await this.villainService.getById(id);
@@ -42,6 +45,11 @@ export class VillainsController {
     }
   }
 
+  @ApiOperation({ title: 'Create villain' })
+  @ApiResponse({
+    status: 201,
+    description: 'The villain has been successfully created.',
+  })
   @Post()
   async saveVillain(@Res() res, @Body() villainDto: CreateVillainDto) {
     const createdVillain = await this.villainService.add(villainDto);
@@ -59,15 +67,16 @@ export class VillainsController {
     return await this.villainService.update(id, villainDto);
   }
 
+  @ApiOperation({ title: 'Delete villain' })
+  @ApiResponse({
+    status: 200,
+    description: 'The villain has been successfully deleted.',
+  })
   @Delete(':id')
   async removeVillain(@Res() res, @Param('id') id: string) {
-    const deletedVillain = await this.villainService.remove(id);
-    if (!deletedVillain) {
-      throw new NotFoundException('Villain does not exist');
-    }
+    await this.villainService.remove(id);
     return res.status(HttpStatus.OK).json({
-      message: 'Villain has been deleted',
-      deletedVillain,
+      message: 'The villain has been successfully deleted.',
     });
   }
 }

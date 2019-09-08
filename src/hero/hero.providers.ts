@@ -3,7 +3,7 @@ import { HeroSchema } from './hero.schema';
 
 export const heroesProviders = [
   {
-    provide: 'hero',
+    provide: 'HERO_MODEL',
     useFactory: (connection: Connection) =>
       connection.model('Hero', HeroSchema),
     inject: ['DATABASE_CONNECTION'],

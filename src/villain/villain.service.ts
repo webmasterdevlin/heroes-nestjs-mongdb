@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateVillainDto } from './create-villain.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { VillainInterface } from './villain.interface';
@@ -7,7 +7,7 @@ import { VillainInterface } from './villain.interface';
 @Injectable()
 export class VillainService {
   constructor(
-    @InjectModel('villain')
+    @Inject('VILLAIN_MODEL')
     private readonly villainModel: Model<VillainInterface>,
   ) {}
 
@@ -34,7 +34,9 @@ export class VillainService {
   }
 
   async remove(id: string): Promise<any> {
-    // this.villainModel.deleteOne(); does not return anything.
-    return await this.villainModel.findByIdAndRemove(id);
+    const result = await this.villainModel.deleteOne({ _id: id }).exec();
+    if (result.n === 0) {
+      throw new NotFoundException('Could not find villain.');
+    }
   }
 }
