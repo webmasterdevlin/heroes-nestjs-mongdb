@@ -14,6 +14,7 @@ $ npm run start:dev
 ## SwaggerUI
 Url of api docs [http://localhost:5000/docs/](http://localhost:5000/docs/)
 
+Url of Nestjs in production. [https://nestjs-mongodb-g2nm85c59.now.sh](https://nestjs-mongodb-g2nm85c59.now.sh)
 
 Screenshot for the client app version.
 

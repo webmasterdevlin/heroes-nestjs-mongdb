@@ -1,0 +1,1 @@
+{"version":3,"file":"villains.providers.js","sourceRoot":"","sources":["../../src/villain/villains.providers.ts"],"names":[],"mappings":";;AACA,qDAAiD;AAEpC,QAAA,iBAAiB,GAAG;IAC/B;QACE,OAAO,EAAE,eAAe;QACxB,UAAU,EAAE,CAAC,UAAsB,EAAE,EAAE,CACrC,UAAU,CAAC,KAAK,CAAC,SAAS,EAAE,8BAAa,CAAC;QAC5C,MAAM,EAAE,CAAC,qBAAqB,CAAC;KAChC;CACF,CAAC"}
