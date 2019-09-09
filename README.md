@@ -2,7 +2,7 @@
 
 ## How to run
 
-create a database in [Mlab](https://mlab.com/)
+create a database in [Mlab](https://mlab.com/). Make sure to create a user that has a read and write role.
 
 ```sh
 $ git clone https://github.com/webmasterdevlin/nestjs-mongodb.git
