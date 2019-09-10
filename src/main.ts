@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-var-requires
-require('newrelic');
+const rn = require('newrelic');
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
