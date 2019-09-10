@@ -1,7 +1,7 @@
 {
-  "name": "heroes-api",
-  "version": "0.0.0",
-  "description": "backend service of heroes-angular",
+  "name": "heroes-nestjs-mongodb",
+  "version": "1.0.0",
+  "description": "backend service of heroes client apps",
   "author": "",
   "license": "MIT",
   "scripts": {
@@ -31,6 +31,7 @@
     "class-validator": "^0.9.1",
     "mongoose": "^5.6.13",
     "mysql": "^2.17.1",
+    "newrelic": "^5.11.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.3",
     "rxjs": "^6.5.1",
