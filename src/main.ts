@@ -1,10 +1,9 @@
-// tslint:disable-next-line:no-var-requires
-const rn = require('newrelic');
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
+  const rn = require('newrelic');
   const app = await NestFactory.create(AppModule);
   const options = new DocumentBuilder()
     .setTitle('NestJS Tour of Heroes API')

@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const rn = require('newrelic');
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
 const swagger_1 = require("@nestjs/swagger");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
+        const rn = require('newrelic');
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         const options = new swagger_1.DocumentBuilder()
             .setTitle('NestJS Tour of Heroes API')
