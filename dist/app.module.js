@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require('newrelic');
 const common_1 = require("@nestjs/common");
 const hero_module_1 = require("./hero/hero.module");
 const villain_module_1 = require("./villain/villain.module");
