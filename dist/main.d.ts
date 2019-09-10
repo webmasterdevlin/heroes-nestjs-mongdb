@@ -1,1 +1,1 @@
-import 'newrelic';
+export {};

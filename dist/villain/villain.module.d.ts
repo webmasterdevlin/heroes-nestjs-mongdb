@@ -1,1 +1,2 @@
-export declare class VillainModule {}
+export declare class VillainModule {
+}

@@ -1,10 +1,8 @@
+// tslint:disable-next-line:no-var-requires
+require('newrelic');
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import 'newrelic';
-
-// tslint:disable-next-line:no-var-requires
-require('newrelic');
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
