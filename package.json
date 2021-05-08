@@ -35,7 +35,7 @@
     "rimraf": "^2.6.3",
     "rxjs": "^6.5.1",
     "swagger-ui-express": "^4.0.2",
-    "typeorm": "^0.2.16",
+    "typeorm": "^0.2.25",
     "typescript": "^3.4.5"
   },
   "devDependencies": {
